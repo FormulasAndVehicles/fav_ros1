@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+    <name>fav_sim</name>
+    <version>0.0.0</version>
+    <description>The simulation package</description>
+
+    <maintainer email="thies.lennart.alff@tuhh.de">Thies Lennart Alff</maintainer>
+
+    <license>TODO</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <depend>gazebo_ros</depend>
+    <depend>gazebo_plugins</depend>
+    <depend>fav_msgs</depend>
+    <depend>fav_gazebo_plugins</depend>
+</package>

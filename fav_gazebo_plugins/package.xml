@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="3">
+    <name>fav_gazebo_plugins</name>
+    <version>0.0.0</version>
+    <description>The simulation package</description>
+
+    <maintainer email="thies.lennart.alff@tuhh.de">Thies Lennart Alff</maintainer>
+
+    <license>TODO</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <depend>gazebo_ros</depend>
+    <depend>gazebo_plugins</depend>
+    <depend>roscpp</depend>
+    <depend>fav_msgs</depend>
+
+    <!-- <exec_depend>gazebo_ros</exec_depend> -->
+
+    <!-- The export tag contains other, unspecified, tags -->
+    <export>
+        <gazebo plugin_path="${prefix}/lib" />
+        <gazebo_ros gazebo_model_path="${prefix}/models" />
+    </export>
+</package>

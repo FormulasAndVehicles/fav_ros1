@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="thruster" params="suffix parent xyz rpy turning_direction propeller_direction color number">
+        <xacro:include filename="$(find fav_sim)/models/thruster/urdf/thruster_params.xacro" />
+
+        <xacro:property name="propeller_link" value="${suffix}_thruster_propeller_link" />
+        <xacro:property name="propeller_joint" value="${suffix}_thruster_propeller_joint" />
+
+
+        <link name="${propeller_link}">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertial>
+                <mass value="${thruster_mass}" />
+                <inertia ixx="${thruster_ixx}" ixy="0.0" ixz="0.0" iyy="${thruster_iyy}" iyz="0.0" izz="${thruster_izz}" />
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="$(find fav_sim)/models/thruster/meshes/propeller.dae" />
+                </geometry>
+            </visual>
+        </link>
+        <gazebo>
+            <plugin name="thruster" filename="libthruster.so">
+                <link>${propeller_link}</link>
+                <joint>${propeller_joint}</joint>
+                <parent_link>${parent}</parent_link>
+                <linear_coeff>${thrust_linear_coeff}</linear_coeff>
+                <quadratic_coeff>${thrust_quadratic_coeff}</quadratic_coeff>
+                <torque_coeff>${torque_constant}</torque_coeff>
+                <rpm_scaler>${rpm_scaler}</rpm_scaler>
+                <max_rpm>${max_rpm}</max_rpm>
+                <thruster_number>${number}</thruster_number>
+                <turning_direction>${turning_direction}</turning_direction>
+                <propeller_direction>${propeller_direction}</propeller_direction>
+                <timeconstant_up>${timeconstant_up}</timeconstant_up>
+                <timeconstant_down>${timeconstant_down}</timeconstant_down>
+            </plugin>
+        </gazebo>
+        <joint name="${propeller_joint}" type="continuous">
+            <axis xyz="1 0 0" />
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <parent link="${parent}" />
+            <child link="${propeller_link}" />
+        </joint>
+    </xacro:macro>
+</robot>
