@@ -15,19 +15,19 @@ void ThrusterPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf) {
   parent_link_ = model_->GetLink(sdf_params_.parent_link);
   joint_ = model_->GetJoint(sdf_params_.joint);
   world_ = model_->GetWorld();
-  update_connection_ = event::Events::ConnectWorldUpdateBegin(
-      boost::bind(&ThrusterPlugin::OnUpdate, this, _1));
 
   rotor_velocity_filter_ = std::make_unique<FirstOrderFilter<double>>(
       sdf_params_.timeconstant_up, sdf_params_.timeconstant_down,
       rotor_velocity_setpoint_);
 
-  node_ = new ros::NodeHandle(sdf_params_.robotNamespace);
-  thrust_sub_ = node_->subscribe<std_msgs::Float64>(
-      sdf_params_.robotNamespace + "/thruster_" +
-          std::to_string(sdf_params_.thruster_number) + "/" +
-          sdf_params_.thrust_base_topic,
-      1, boost::bind(&ThrusterPlugin::OnThrust, this, _1));
+  node_ = gazebo::transport::NodePtr(new gazebo::transport::Node());
+  std::string ns = sdf_params_.robotNamespace + "thruster_" +
+                   std::to_string(sdf_params_.thruster_number);
+  std::string topic_name = "~/" + sdf_params_.thrust_base_topic;
+  node_->Init(ns);
+  thrust_sub_ = node_->Subscribe(topic_name, &ThrusterPlugin::OnThrust, this);
+  update_connection_ = event::Events::ConnectWorldUpdateBegin(
+      boost::bind(&ThrusterPlugin::OnUpdate, this, _1));
 }
 void ThrusterPlugin::OnUpdate(const common::UpdateInfo &_info) {
   double dt = (_info.simTime - prev_sim_time_).Double();
@@ -36,9 +36,9 @@ void ThrusterPlugin::OnUpdate(const common::UpdateInfo &_info) {
   UpdateForcesAndMoments();
 }
 
-void ThrusterPlugin::OnThrust(const std_msgs::Float64::ConstPtr &_msg) {
+void ThrusterPlugin::OnThrust(ConstAnyPtr &_msg) {
   std::lock_guard<std::mutex> lock(mutex_);
-  rotor_velocity_setpoint_ = ThrustToVelocity(_msg->data);
+  rotor_velocity_setpoint_ = ThrustToVelocity(_msg->double_value());
 }
 void ThrusterPlugin::ParseSdf(sdf::ElementPtr _sdf) {
   AssignSdfParam(_sdf, "link", sdf_params_.link);
@@ -91,6 +91,8 @@ void ThrusterPlugin::UpdateForcesAndMoments() {
   }
   thrust *= propeller_direction_;
 
+  // remove the effect of the propeller direction by multiplying thrust with it
+  // again. The moment only depends on the turning direction.
   double moment = -propeller_direction_ * thrust * sdf_params_.torque_coeff;
 
   ignition::math::Vector3d force{thrust, 0, 0};

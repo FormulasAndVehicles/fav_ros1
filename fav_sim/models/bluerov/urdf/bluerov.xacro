@@ -4,17 +4,14 @@
     <xacro:include filename="$(find fav_sim)/models/thruster/urdf/thruster_macro.xacro" />
 
     <xacro:property name="thruster_xy" value="${thruster_r / 2**0.5}" />
-    <gazebo>
-        <static>false</static>
-    </gazebo>
     <link name="base_link">
-        <inertial>
+        <inertial name="base_link_inertial">
             <mass value="${base_mass}" />
             <inertia ixx="${ixx}" ixy="0.0" ixz="0.0" iyy="${iyy}" iyz="0.0" izz="${izz}" />
         </inertial>
-        <visual>
+        <visual name="base_link_visual">
             <geometry>
-                <mesh filename="$(find fav_sim)/models/bluerov/meshes/bluerov.dae" />
+                <mesh filename="file://$(find fav_sim)/models/bluerov/meshes/bluerov.dae" />
             </geometry>
         </visual>
     </link>
@@ -29,6 +26,19 @@
             <added_mass_angular>${added_mass_angular}</added_mass_angular>
             <damping_linear>${damping_linear}</damping_linear>
             <damping_angular>${damping_angular}</damping_angular>
+        </plugin>
+        <plugin name="joint_state" filename="libgazebo_ros_joint_state_publisher.so">
+            <robotNamespace />
+            <jointName>front_starboard_horizontal_thruster_propeller_joint,
+                front_port_horizontal_thruster_propeller_joint,
+                rear_starboard_horizontal_thruster_propeller_joint,
+                rear_port_horizontal_thruster_propeller_joint,
+                front_starboard_vertical_thruster_propeller_joint,
+                front_port_vertical_thruster_propeller_joint,
+                rear_starboard_vertical_thruster_propeller_joint,
+                rear_port_vertical_thruster_propeller_joint
+            </jointName>
+            <updateRate>50.0</updateRate>
         </plugin>
     </gazebo>
 

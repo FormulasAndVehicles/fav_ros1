@@ -12,6 +12,8 @@
 
     <depend>gazebo_ros</depend>
     <depend>gazebo_plugins</depend>
+    <depend>rospy</depend>
+    <depend>roscpp</depend>
     <depend>fav_msgs</depend>
     <depend>fav_gazebo_plugins</depend>
 </package>

@@ -39,6 +39,7 @@ class ThrusterPlugin : public ModelPlugin {
   virtual void Load(physics::ModelPtr model, sdf::ElementPtr _sdf);
   virtual void OnUpdate(const common::UpdateInfo &);
   void ParseSdf(sdf::ElementPtr _sdf);
+  void OnThrust(ConstAnyPtr &_msg);
 
  private:
   void UpdateForcesAndMoments();
@@ -47,7 +48,6 @@ class ThrusterPlugin : public ModelPlugin {
   double ThrustToVelocity(double _thrust) {
     return _thrust * turning_direction_ * sdf_params_.maximum_rpm / 60.0 * 3.14;
   }
-  void OnThrust(const std_msgs::Float64::ConstPtr &_msg);
   struct SdfParams {
     std::string link;
     std::string parent_link{"base_link"};
@@ -80,8 +80,8 @@ class ThrusterPlugin : public ModelPlugin {
 
   common::Time prev_sim_time_;
 
-  ros::NodeHandle *node_;
-  ros::Subscriber thrust_sub_;
+  transport::NodePtr node_;
+  transport::SubscriberPtr thrust_sub_;
 
   std::unique_ptr<FirstOrderFilter<double>> rotor_velocity_filter_;
   double rotor_velocity_setpoint_{0.0};

@@ -16,6 +16,7 @@ add_message_files(
     FILES
     RangeMeasurement.msg
     RangeMeasurementArray.msg
+    ThrusterSetpoint.msg
 )
 
 generate_messages(

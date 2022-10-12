@@ -9,18 +9,18 @@
 
         <link name="${propeller_link}">
             <origin xyz="0 0 0" rpy="0 0 0" />
-            <inertial>
+            <inertial name="${propeller_link}_inertial">
                 <mass value="${thruster_mass}" />
                 <inertia ixx="${thruster_ixx}" ixy="0.0" ixz="0.0" iyy="${thruster_iyy}" iyz="0.0" izz="${thruster_izz}" />
             </inertial>
-            <visual>
+            <visual name="${propeller_link}_visual">
                 <geometry>
-                    <mesh filename="$(find fav_sim)/models/thruster/meshes/propeller.dae" />
+                    <mesh filename="file://$(find fav_sim)/models/thruster/meshes/propeller.dae" />
                 </geometry>
             </visual>
         </link>
         <gazebo>
-            <plugin name="thruster" filename="libthruster.so">
+            <plugin name="${suffix}_thruster" filename="libthruster.so">
                 <link>${propeller_link}</link>
                 <joint>${propeller_joint}</joint>
                 <parent_link>${parent}</parent_link>
