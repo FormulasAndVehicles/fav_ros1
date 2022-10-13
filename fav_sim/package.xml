@@ -16,4 +16,8 @@
     <depend>roscpp</depend>
     <depend>fav_msgs</depend>
     <depend>fav_gazebo_plugins</depend>
+
+    <export>
+        <gazebo_ros gazebo_model_path="${prefix}/models/sdf_models" />
+    </export>
 </package>

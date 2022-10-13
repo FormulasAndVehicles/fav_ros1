@@ -1,0 +1,409 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="Tank">
+    <pose>0 0 0 0 0 0</pose>
+    <link name="base_link">
+      <visual name="wall_1">
+        <pose>1.0 -0.05 -0.75 0 0 0</pose>
+        <transparency>0.8</transparency>
+        <geometry>
+          <box>
+            <size>2 0.1 1.5</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="wall_2">
+        <pose>1.0 4.05 -0.75 0 0 0</pose>
+        <transparency>0.8</transparency>
+        <geometry>
+          <box>
+            <size>2 0.1 1.5</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="wall_3">
+        <pose>-0.05 2.0 -0.75 0 0 0</pose>
+        <transparency>0.8</transparency>
+        <geometry>
+          <box>
+            <size>0.1 4.2 1.5</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="wall_4">
+        <pose>2.05 2.0 -0.75 0 0 0</pose>
+        <transparency>0.8</transparency>
+        <geometry>
+          <box>
+            <size>0.1 4.2 1.5</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <static>true</static>
+    <include>
+      <uri>model://tag36_11_00000</uri>
+      <pose>0.2 0.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00001</uri>
+      <pose>0.45 0.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00002</uri>
+      <pose>0.7 0.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00003</uri>
+      <pose>0.95 0.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00004</uri>
+      <pose>1.2 0.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00005</uri>
+      <pose>1.45 0.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00006</uri>
+      <pose>1.7 0.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00007</uri>
+      <pose>0.2 0.6 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00008</uri>
+      <pose>0.45 0.6 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00009</uri>
+      <pose>0.7 0.6 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00010</uri>
+      <pose>0.95 0.6 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00011</uri>
+      <pose>1.2 0.6 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00012</uri>
+      <pose>1.45 0.6 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00013</uri>
+      <pose>1.7 0.6 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00014</uri>
+      <pose>0.2 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00015</uri>
+      <pose>0.45 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00016</uri>
+      <pose>0.7 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00017</uri>
+      <pose>0.95 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00018</uri>
+      <pose>1.2 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00019</uri>
+      <pose>1.45 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00020</uri>
+      <pose>1.7 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00021</uri>
+      <pose>0.2 1.2 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00022</uri>
+      <pose>0.45 1.2 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00023</uri>
+      <pose>0.7 1.2 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00024</uri>
+      <pose>0.95 1.2 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00025</uri>
+      <pose>1.2 1.2 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00026</uri>
+      <pose>1.45 1.2 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00027</uri>
+      <pose>1.7 1.2 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00028</uri>
+      <pose>0.2 1.5 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00029</uri>
+      <pose>0.45 1.5 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00030</uri>
+      <pose>0.7 1.5 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00031</uri>
+      <pose>0.95 1.5 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00032</uri>
+      <pose>1.2 1.5 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00033</uri>
+      <pose>1.45 1.5 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00034</uri>
+      <pose>1.7 1.5 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00035</uri>
+      <pose>0.2 1.8 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00036</uri>
+      <pose>0.45 1.8 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00037</uri>
+      <pose>0.7 1.8 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00038</uri>
+      <pose>0.95 1.8 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00039</uri>
+      <pose>1.2 1.8 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00040</uri>
+      <pose>1.45 1.8 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00041</uri>
+      <pose>1.7 1.8 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00042</uri>
+      <pose>0.2 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00043</uri>
+      <pose>0.45 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00044</uri>
+      <pose>0.7 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00045</uri>
+      <pose>0.95 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00046</uri>
+      <pose>1.2 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00047</uri>
+      <pose>1.45 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00048</uri>
+      <pose>1.7 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00049</uri>
+      <pose>0.2 2.4 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00050</uri>
+      <pose>0.45 2.4 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00051</uri>
+      <pose>0.7 2.4 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00052</uri>
+      <pose>0.95 2.4 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00053</uri>
+      <pose>1.2 2.4 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00054</uri>
+      <pose>1.45 2.4 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00055</uri>
+      <pose>1.7 2.4 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00056</uri>
+      <pose>0.2 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00057</uri>
+      <pose>0.45 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00058</uri>
+      <pose>0.7 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00059</uri>
+      <pose>0.95 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00060</uri>
+      <pose>1.2 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00061</uri>
+      <pose>1.45 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00062</uri>
+      <pose>1.7 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00063</uri>
+      <pose>0.2 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00064</uri>
+      <pose>0.45 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00065</uri>
+      <pose>0.7 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00066</uri>
+      <pose>0.95 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00067</uri>
+      <pose>1.2 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00068</uri>
+      <pose>1.45 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00069</uri>
+      <pose>1.7 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00070</uri>
+      <pose>0.2 3.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00071</uri>
+      <pose>0.45 3.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00072</uri>
+      <pose>0.7 3.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00073</uri>
+      <pose>0.95 3.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00074</uri>
+      <pose>1.2 3.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00075</uri>
+      <pose>1.45 3.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00076</uri>
+      <pose>1.7 3.3 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00077</uri>
+      <pose>0.2 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00078</uri>
+      <pose>0.45 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00079</uri>
+      <pose>0.7 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00080</uri>
+      <pose>0.95 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00081</uri>
+      <pose>1.2 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00082</uri>
+      <pose>1.45 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00083</uri>
+      <pose>1.7 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00084</uri>
+      <pose>0.2 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00085</uri>
+      <pose>0.45 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00086</uri>
+      <pose>0.7 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00087</uri>
+      <pose>0.95 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00088</uri>
+      <pose>1.2 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00089</uri>
+      <pose>1.45 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+    <include>
+      <uri>model://tag36_11_00090</uri>
+      <pose>1.7 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
+    </include>
+  </model>
+</sdf>
