@@ -1,5 +1,7 @@
 #include "barometer.hpp"
 
+#include "common.hpp"
+
 namespace gazebo {
 GZ_REGISTER_MODEL_PLUGIN(BarometerPlugin)
 
@@ -8,33 +10,19 @@ BarometerPlugin::BarometerPlugin()
 
 BarometerPlugin::~BarometerPlugin() { update_connection_->~Connection(); }
 
-void BarometerPlugin::getSdfParams(sdf::ElementPtr sdf) {
-  namespace_.clear();
-  if (sdf->HasElement("robotNamespace")) {
-    namespace_ = sdf->GetElement("robotNamespace")->Get<std::string>();
-  }
-  if (sdf->HasElement("pubRate")) {
-    pub_rate_ = sdf->GetElement("pubRate")->Get<double>();
-  } else {
-    pub_rate_ = kDefaultPubRate;
-    gzwarn << "[pressure_plugin] Using default publication rate of "
-           << pub_rate_ << "Hz\n";
-  }
-  if (sdf->HasElement("pressureTopic")) {
-    pressure_topic_ = sdf->GetElement("pressureTopic")->Get<std::string>();
-  } else {
-    pressure_topic_ = kDefaultPressureTopic;
-  }
-  if (sdf->HasElement("noise")) {
-    pressure_noise_ = sdf->GetElement("noise")->Get<double>();
-  } else {
-    pressure_noise_ = kDefaultPressureNoise;
-  }
+void BarometerPlugin::ParseSdf(sdf::ElementPtr _sdf) {
+  AssignSdfParam(_sdf, "robotNamespace", sdf_params_.robotNamespace);
+  AssignSdfParam(_sdf, "link", sdf_params_.link);
+  AssignSdfParam(_sdf, "position", sdf_params_.position);
+  AssignSdfParam(_sdf, "publish_rate", sdf_params_.publish_rate);
+  AssignSdfParam(_sdf, "topic", sdf_params_.topic);
+  AssignSdfParam(_sdf, "noise", sdf_params_.noise);
 }
 
 void BarometerPlugin::Load(physics::ModelPtr model, sdf::ElementPtr sdf) {
-  getSdfParams(sdf);
+  ParseSdf(sdf);
   model_ = model;
+  link_ = model_->GetLink(sdf_params_.link);
   world_ = model_->GetWorld();
   last_time_ = world_->SimTime();
   last_pub_time_ = world_->SimTime();
@@ -43,23 +31,24 @@ void BarometerPlugin::Load(physics::ModelPtr model, sdf::ElementPtr sdf) {
     ROS_FATAL_STREAM("Ros node for gazebo not initialized");
     return;
   }
-  node_handle_ = new ros::NodeHandle(namespace_);
+  node_handle_ = new ros::NodeHandle(sdf_params_.robotNamespace);
 
   update_connection_ = event::Events::ConnectWorldUpdateBegin(
       boost::bind(&BarometerPlugin::OnUpdate, this, _1));
 
-  pressure_pub_ = node_handle_->advertise<sensor_msgs::FluidPressure>(
-      namespace_ + "/" + pressure_topic_, 1);
+  pressure_pub_ =
+      node_handle_->advertise<sensor_msgs::FluidPressure>(sdf_params_.topic, 1);
 }
 
 void BarometerPlugin::OnUpdate(const common::UpdateInfo &) {
   common::Time current_time = world_->SimTime();
   double dt = (current_time - last_pub_time_).Double();
 
-  if (dt > 1.0 / pub_rate_) {
+  if (dt > 1.0 / sdf_params_.publish_rate) {
     sensor_msgs::FluidPressure msg;
+    auto pose = link_->WorldPose();
     double z_height =
-        model_->GetLink("pressure_sensor_link")->WorldPose().Pos().Z();
+        pose.Pos().Z() + pose.Rot().RotateVector(sdf_params_.position).Z();
 
     msg.header.stamp = ros::Time::now();
     msg.header.frame_id = "map";
@@ -95,7 +84,7 @@ void BarometerPlugin::OnUpdate(const common::UpdateInfo &) {
     }
 
     // apply noise.
-    double noise = pressure_noise_ * y1;
+    double noise = sdf_params_.noise * y1;
     msg.fluid_pressure += noise;
 
     pressure_pub_.publish(msg);

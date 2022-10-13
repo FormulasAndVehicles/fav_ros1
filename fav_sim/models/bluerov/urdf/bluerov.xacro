@@ -27,6 +27,11 @@
             <damping_linear>${damping_linear}</damping_linear>
             <damping_angular>${damping_angular}</damping_angular>
         </plugin>
+        <plugin name="barometer" filename="libbarometer.so">
+            <link>base_link</link>
+            <position>${barometer_position}</position>
+            <noise>${barometer_noise}</noise>
+        </plugin>
         <plugin name="joint_state" filename="libgazebo_ros_joint_state_publisher.so">
             <robotNamespace />
             <jointName>front_starboard_horizontal_thruster_propeller_joint,

@@ -22,20 +22,24 @@ class BarometerPlugin : public ModelPlugin {
  protected:
   virtual void Load(physics::ModelPtr model, sdf::ElementPtr _sdf);
   virtual void OnUpdate(const common::UpdateInfo &);
-  void getSdfParams(sdf::ElementPtr sdf);
+  void ParseSdf(sdf::ElementPtr _sdf);
 
  private:
-  std::string namespace_;
+  struct {
+    std::string robotNamespace;
+    std::string link{"base_link"};
+    ignition::math::Vector3d position{0.0, 0.0, 0.0};
+    double publish_rate{50.0};
+    std::string topic{"pressure"};
+    double noise{100.0};
+  } sdf_params_;
   physics::ModelPtr model_;
+  physics::LinkPtr link_;
   physics::WorldPtr world_;
   event::ConnectionPtr update_connection_;
-  std::string pressure_topic_;
-  double pressure_noise_;
 
   ros::NodeHandle *node_handle_;
   ros::Publisher pressure_pub_;
-
-  double pub_rate_;
 
   std::default_random_engine random_generator_;
   std::normal_distribution<double> standard_normal_distribution_;
