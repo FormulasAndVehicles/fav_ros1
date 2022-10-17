@@ -1,0 +1,11 @@
+<launch>
+    <arg name="vehicle_name" default="bluerov" />
+
+    <!-- spawn the bluerov model in the gazebo simulation -->
+    <include file="$(find fav_sim)/launch/spawn_vehicle.launch">
+        <arg name="vehicle_name" value="$(arg vehicle_name)" />
+    </include>
+
+    <!-- start a node reading the keyboard input to control the vheicle -->
+    <node ns="$(arg vehicle_name)" name="keyboard" pkg="fav_sim" type="keyboard_control.py" />
+</launch>

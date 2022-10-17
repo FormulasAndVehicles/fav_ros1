@@ -4,5 +4,8 @@
         <param name="robot_description" command="$(find xacro)/xacro $(find fav_sim)/models/bluerov/urdf/bluerov.xacro" />
         <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model $(arg vehicle_name)" />
         <node name="esc_commander" pkg="fav_sim" type="esc_commander" output="screen" />
+        <node name="mixer" pkg="fav_sim" type="simple_mixer" output="screen">
+            <rosparam command="load" file="$(find fav_sim)/config/mixer_default.yaml" />
+        </node>
     </group>
 </launch>
