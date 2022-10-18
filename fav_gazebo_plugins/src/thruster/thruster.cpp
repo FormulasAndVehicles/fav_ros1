@@ -83,7 +83,7 @@ void ThrusterPlugin::SetRotorVelocity(double _velocity) {
 
 void ThrusterPlugin::UpdateForcesAndMoments() {
   double thrust;
-  double tmp = std::abs(rotor_velocity_);
+  double tmp = std::abs(rotor_velocity_) / 2 / 3.14;
   thrust =
       tmp * tmp * sdf_params_.quadratic_coeff + tmp * sdf_params_.linear_coeff;
   if (rotor_velocity_ < 0) {

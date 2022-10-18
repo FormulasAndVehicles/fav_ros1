@@ -46,7 +46,7 @@ class ThrusterPlugin : public ModelPlugin {
   void UpdateRotorVelocity(double _dt);
   void SetRotorVelocity(double _velocity);
   double ThrustToVelocity(double _thrust) {
-    return _thrust * turning_direction_ * sdf_params_.maximum_rpm / 60.0 * 3.14;
+    return _thrust * turning_direction_ * sdf_params_.maximum_rpm / 60.0 * 2.0 * 3.14;
   }
   struct SdfParams {
     std::string link;

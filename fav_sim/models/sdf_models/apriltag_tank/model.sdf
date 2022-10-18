@@ -41,369 +41,1916 @@
       </visual>
     </link>
     <static>true</static>
-    <include>
-      <uri>model://tag36_11_00000</uri>
-      <pose>0.2 0.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00001</uri>
+  <model name="tag36_11_00000">
+    <pose>0.2 0.3 -1.3 0.0 0.0 0.0</pose>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00000/materials/scripts</uri>
+            <uri>model://tag36_11_00000/materials/textures</uri>
+            <name>tag36_11_00000/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00000/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00001">
       <pose>0.45 0.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00002</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00001/materials/scripts</uri>
+            <uri>model://tag36_11_00001/materials/textures</uri>
+            <name>tag36_11_00001/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00001/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00002">
       <pose>0.7 0.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00003</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00002/materials/scripts</uri>
+            <uri>model://tag36_11_00002/materials/textures</uri>
+            <name>tag36_11_00002/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00002/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00003">
       <pose>0.95 0.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00004</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00003/materials/scripts</uri>
+            <uri>model://tag36_11_00003/materials/textures</uri>
+            <name>tag36_11_00003/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00003/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00004">
       <pose>1.2 0.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00005</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00004/materials/scripts</uri>
+            <uri>model://tag36_11_00004/materials/textures</uri>
+            <name>tag36_11_00004/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00004/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00005">
       <pose>1.45 0.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00006</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00005/materials/scripts</uri>
+            <uri>model://tag36_11_00005/materials/textures</uri>
+            <name>tag36_11_00005/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00005/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00006">
       <pose>1.7 0.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00007</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00006/materials/scripts</uri>
+            <uri>model://tag36_11_00006/materials/textures</uri>
+            <name>tag36_11_00006/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00006/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00007">
       <pose>0.2 0.6 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00008</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00007/materials/scripts</uri>
+            <uri>model://tag36_11_00007/materials/textures</uri>
+            <name>tag36_11_00007/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00007/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00008">
       <pose>0.45 0.6 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00009</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00008/materials/scripts</uri>
+            <uri>model://tag36_11_00008/materials/textures</uri>
+            <name>tag36_11_00008/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00008/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00009">
       <pose>0.7 0.6 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00010</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00009/materials/scripts</uri>
+            <uri>model://tag36_11_00009/materials/textures</uri>
+            <name>tag36_11_00009/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00009/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00010">
       <pose>0.95 0.6 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00011</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00010/materials/scripts</uri>
+            <uri>model://tag36_11_00010/materials/textures</uri>
+            <name>tag36_11_00010/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00010/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00011">
       <pose>1.2 0.6 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00012</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00011/materials/scripts</uri>
+            <uri>model://tag36_11_00011/materials/textures</uri>
+            <name>tag36_11_00011/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00011/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00012">
       <pose>1.45 0.6 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00013</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00012/materials/scripts</uri>
+            <uri>model://tag36_11_00012/materials/textures</uri>
+            <name>tag36_11_00012/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00012/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00013">
       <pose>1.7 0.6 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00014</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00013/materials/scripts</uri>
+            <uri>model://tag36_11_00013/materials/textures</uri>
+            <name>tag36_11_00013/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00013/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00014">
       <pose>0.2 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00015</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00014/materials/scripts</uri>
+            <uri>model://tag36_11_00014/materials/textures</uri>
+            <name>tag36_11_00014/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00014/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00015">
       <pose>0.45 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00016</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00015/materials/scripts</uri>
+            <uri>model://tag36_11_00015/materials/textures</uri>
+            <name>tag36_11_00015/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00015/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00016">
       <pose>0.7 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00017</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00016/materials/scripts</uri>
+            <uri>model://tag36_11_00016/materials/textures</uri>
+            <name>tag36_11_00016/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00016/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00017">
       <pose>0.95 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00018</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00017/materials/scripts</uri>
+            <uri>model://tag36_11_00017/materials/textures</uri>
+            <name>tag36_11_00017/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00017/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00018">
       <pose>1.2 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00019</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00018/materials/scripts</uri>
+            <uri>model://tag36_11_00018/materials/textures</uri>
+            <name>tag36_11_00018/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00018/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00019">
       <pose>1.45 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00020</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00019/materials/scripts</uri>
+            <uri>model://tag36_11_00019/materials/textures</uri>
+            <name>tag36_11_00019/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00019/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00020">
       <pose>1.7 0.8999999999999999 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00021</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00020/materials/scripts</uri>
+            <uri>model://tag36_11_00020/materials/textures</uri>
+            <name>tag36_11_00020/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00020/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00021">
       <pose>0.2 1.2 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00022</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00021/materials/scripts</uri>
+            <uri>model://tag36_11_00021/materials/textures</uri>
+            <name>tag36_11_00021/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00021/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00022">
       <pose>0.45 1.2 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00023</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00022/materials/scripts</uri>
+            <uri>model://tag36_11_00022/materials/textures</uri>
+            <name>tag36_11_00022/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00022/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00023">
       <pose>0.7 1.2 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00024</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00023/materials/scripts</uri>
+            <uri>model://tag36_11_00023/materials/textures</uri>
+            <name>tag36_11_00023/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00023/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00024">
       <pose>0.95 1.2 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00025</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00024/materials/scripts</uri>
+            <uri>model://tag36_11_00024/materials/textures</uri>
+            <name>tag36_11_00024/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00024/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00025">
       <pose>1.2 1.2 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00026</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00025/materials/scripts</uri>
+            <uri>model://tag36_11_00025/materials/textures</uri>
+            <name>tag36_11_00025/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00025/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00026">
       <pose>1.45 1.2 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00027</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00026/materials/scripts</uri>
+            <uri>model://tag36_11_00026/materials/textures</uri>
+            <name>tag36_11_00026/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00026/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00027">
       <pose>1.7 1.2 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00028</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00027/materials/scripts</uri>
+            <uri>model://tag36_11_00027/materials/textures</uri>
+            <name>tag36_11_00027/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00027/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00028">
       <pose>0.2 1.5 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00029</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00028/materials/scripts</uri>
+            <uri>model://tag36_11_00028/materials/textures</uri>
+            <name>tag36_11_00028/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00028/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00029">
       <pose>0.45 1.5 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00030</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00029/materials/scripts</uri>
+            <uri>model://tag36_11_00029/materials/textures</uri>
+            <name>tag36_11_00029/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00029/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00030">
       <pose>0.7 1.5 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00031</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00030/materials/scripts</uri>
+            <uri>model://tag36_11_00030/materials/textures</uri>
+            <name>tag36_11_00030/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00030/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00031">
       <pose>0.95 1.5 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00032</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00031/materials/scripts</uri>
+            <uri>model://tag36_11_00031/materials/textures</uri>
+            <name>tag36_11_00031/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00031/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00032">
       <pose>1.2 1.5 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00033</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00032/materials/scripts</uri>
+            <uri>model://tag36_11_00032/materials/textures</uri>
+            <name>tag36_11_00032/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00032/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00033">
       <pose>1.45 1.5 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00034</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00033/materials/scripts</uri>
+            <uri>model://tag36_11_00033/materials/textures</uri>
+            <name>tag36_11_00033/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00033/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00034">
       <pose>1.7 1.5 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00035</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00034/materials/scripts</uri>
+            <uri>model://tag36_11_00034/materials/textures</uri>
+            <name>tag36_11_00034/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00034/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00035">
       <pose>0.2 1.8 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00036</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00035/materials/scripts</uri>
+            <uri>model://tag36_11_00035/materials/textures</uri>
+            <name>tag36_11_00035/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00035/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00036">
       <pose>0.45 1.8 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00037</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00036/materials/scripts</uri>
+            <uri>model://tag36_11_00036/materials/textures</uri>
+            <name>tag36_11_00036/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00036/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00037">
       <pose>0.7 1.8 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00038</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00037/materials/scripts</uri>
+            <uri>model://tag36_11_00037/materials/textures</uri>
+            <name>tag36_11_00037/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00037/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00038">
       <pose>0.95 1.8 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00039</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00038/materials/scripts</uri>
+            <uri>model://tag36_11_00038/materials/textures</uri>
+            <name>tag36_11_00038/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00038/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00039">
       <pose>1.2 1.8 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00040</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00039/materials/scripts</uri>
+            <uri>model://tag36_11_00039/materials/textures</uri>
+            <name>tag36_11_00039/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00039/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00040">
       <pose>1.45 1.8 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00041</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00040/materials/scripts</uri>
+            <uri>model://tag36_11_00040/materials/textures</uri>
+            <name>tag36_11_00040/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00040/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00041">
       <pose>1.7 1.8 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00042</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00041/materials/scripts</uri>
+            <uri>model://tag36_11_00041/materials/textures</uri>
+            <name>tag36_11_00041/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00041/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00042">
       <pose>0.2 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00043</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00042/materials/scripts</uri>
+            <uri>model://tag36_11_00042/materials/textures</uri>
+            <name>tag36_11_00042/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00042/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00043">
       <pose>0.45 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00044</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00043/materials/scripts</uri>
+            <uri>model://tag36_11_00043/materials/textures</uri>
+            <name>tag36_11_00043/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00043/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00044">
       <pose>0.7 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00045</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00044/materials/scripts</uri>
+            <uri>model://tag36_11_00044/materials/textures</uri>
+            <name>tag36_11_00044/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00044/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00045">
       <pose>0.95 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00046</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00045/materials/scripts</uri>
+            <uri>model://tag36_11_00045/materials/textures</uri>
+            <name>tag36_11_00045/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00045/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00046">
       <pose>1.2 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00047</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00046/materials/scripts</uri>
+            <uri>model://tag36_11_00046/materials/textures</uri>
+            <name>tag36_11_00046/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00046/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00047">
       <pose>1.45 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00048</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00047/materials/scripts</uri>
+            <uri>model://tag36_11_00047/materials/textures</uri>
+            <name>tag36_11_00047/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00047/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00048">
       <pose>1.7 2.0999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00049</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00048/materials/scripts</uri>
+            <uri>model://tag36_11_00048/materials/textures</uri>
+            <name>tag36_11_00048/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00048/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00049">
       <pose>0.2 2.4 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00050</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00049/materials/scripts</uri>
+            <uri>model://tag36_11_00049/materials/textures</uri>
+            <name>tag36_11_00049/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00049/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00050">
       <pose>0.45 2.4 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00051</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00050/materials/scripts</uri>
+            <uri>model://tag36_11_00050/materials/textures</uri>
+            <name>tag36_11_00050/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00050/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00051">
       <pose>0.7 2.4 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00052</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00051/materials/scripts</uri>
+            <uri>model://tag36_11_00051/materials/textures</uri>
+            <name>tag36_11_00051/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00051/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00052">
       <pose>0.95 2.4 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00053</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00052/materials/scripts</uri>
+            <uri>model://tag36_11_00052/materials/textures</uri>
+            <name>tag36_11_00052/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00052/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00053">
       <pose>1.2 2.4 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00054</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00053/materials/scripts</uri>
+            <uri>model://tag36_11_00053/materials/textures</uri>
+            <name>tag36_11_00053/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00053/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00054">
       <pose>1.45 2.4 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00055</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00054/materials/scripts</uri>
+            <uri>model://tag36_11_00054/materials/textures</uri>
+            <name>tag36_11_00054/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00054/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00055">
       <pose>1.7 2.4 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00056</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00055/materials/scripts</uri>
+            <uri>model://tag36_11_00055/materials/textures</uri>
+            <name>tag36_11_00055/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00055/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00056">
       <pose>0.2 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00057</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00056/materials/scripts</uri>
+            <uri>model://tag36_11_00056/materials/textures</uri>
+            <name>tag36_11_00056/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00056/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00057">
       <pose>0.45 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00058</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00057/materials/scripts</uri>
+            <uri>model://tag36_11_00057/materials/textures</uri>
+            <name>tag36_11_00057/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00057/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00058">
       <pose>0.7 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00059</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00058/materials/scripts</uri>
+            <uri>model://tag36_11_00058/materials/textures</uri>
+            <name>tag36_11_00058/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00058/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00059">
       <pose>0.95 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00060</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00059/materials/scripts</uri>
+            <uri>model://tag36_11_00059/materials/textures</uri>
+            <name>tag36_11_00059/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00059/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00060">
       <pose>1.2 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00061</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00060/materials/scripts</uri>
+            <uri>model://tag36_11_00060/materials/textures</uri>
+            <name>tag36_11_00060/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00060/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00061">
       <pose>1.45 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00062</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00061/materials/scripts</uri>
+            <uri>model://tag36_11_00061/materials/textures</uri>
+            <name>tag36_11_00061/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00061/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00062">
       <pose>1.7 2.6999999999999997 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00063</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00062/materials/scripts</uri>
+            <uri>model://tag36_11_00062/materials/textures</uri>
+            <name>tag36_11_00062/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00062/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00063">
       <pose>0.2 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00064</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00063/materials/scripts</uri>
+            <uri>model://tag36_11_00063/materials/textures</uri>
+            <name>tag36_11_00063/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00063/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00064">
       <pose>0.45 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00065</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00064/materials/scripts</uri>
+            <uri>model://tag36_11_00064/materials/textures</uri>
+            <name>tag36_11_00064/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00064/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00065">
       <pose>0.7 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00066</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00065/materials/scripts</uri>
+            <uri>model://tag36_11_00065/materials/textures</uri>
+            <name>tag36_11_00065/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00065/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00066">
       <pose>0.95 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00067</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00066/materials/scripts</uri>
+            <uri>model://tag36_11_00066/materials/textures</uri>
+            <name>tag36_11_00066/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00066/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00067">
       <pose>1.2 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00068</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00067/materials/scripts</uri>
+            <uri>model://tag36_11_00067/materials/textures</uri>
+            <name>tag36_11_00067/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00067/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00068">
       <pose>1.45 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00069</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00068/materials/scripts</uri>
+            <uri>model://tag36_11_00068/materials/textures</uri>
+            <name>tag36_11_00068/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00068/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00069">
       <pose>1.7 2.9999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00070</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00069/materials/scripts</uri>
+            <uri>model://tag36_11_00069/materials/textures</uri>
+            <name>tag36_11_00069/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00069/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00070">
       <pose>0.2 3.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00071</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00070/materials/scripts</uri>
+            <uri>model://tag36_11_00070/materials/textures</uri>
+            <name>tag36_11_00070/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00070/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00071">
       <pose>0.45 3.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00072</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00071/materials/scripts</uri>
+            <uri>model://tag36_11_00071/materials/textures</uri>
+            <name>tag36_11_00071/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00071/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00072">
       <pose>0.7 3.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00073</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00072/materials/scripts</uri>
+            <uri>model://tag36_11_00072/materials/textures</uri>
+            <name>tag36_11_00072/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00072/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00073">
       <pose>0.95 3.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00074</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00073/materials/scripts</uri>
+            <uri>model://tag36_11_00073/materials/textures</uri>
+            <name>tag36_11_00073/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00073/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00074">
       <pose>1.2 3.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00075</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00074/materials/scripts</uri>
+            <uri>model://tag36_11_00074/materials/textures</uri>
+            <name>tag36_11_00074/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00074/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00075">
       <pose>1.45 3.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00076</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00075/materials/scripts</uri>
+            <uri>model://tag36_11_00075/materials/textures</uri>
+            <name>tag36_11_00075/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00075/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00076">
       <pose>1.7 3.3 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00077</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00076/materials/scripts</uri>
+            <uri>model://tag36_11_00076/materials/textures</uri>
+            <name>tag36_11_00076/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00076/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00077">
       <pose>0.2 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00078</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00077/materials/scripts</uri>
+            <uri>model://tag36_11_00077/materials/textures</uri>
+            <name>tag36_11_00077/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00077/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00078">
       <pose>0.45 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00079</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00078/materials/scripts</uri>
+            <uri>model://tag36_11_00078/materials/textures</uri>
+            <name>tag36_11_00078/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00078/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00079">
       <pose>0.7 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00080</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00079/materials/scripts</uri>
+            <uri>model://tag36_11_00079/materials/textures</uri>
+            <name>tag36_11_00079/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00079/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00080">
       <pose>0.95 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00081</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00080/materials/scripts</uri>
+            <uri>model://tag36_11_00080/materials/textures</uri>
+            <name>tag36_11_00080/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00080/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00081">
       <pose>1.2 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00082</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00081/materials/scripts</uri>
+            <uri>model://tag36_11_00081/materials/textures</uri>
+            <name>tag36_11_00081/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00081/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00082">
       <pose>1.45 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00083</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00082/materials/scripts</uri>
+            <uri>model://tag36_11_00082/materials/textures</uri>
+            <name>tag36_11_00082/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00082/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00083">
       <pose>1.7 3.5999999999999996 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00084</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00083/materials/scripts</uri>
+            <uri>model://tag36_11_00083/materials/textures</uri>
+            <name>tag36_11_00083/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00083/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00084">
       <pose>0.2 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00085</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00084/materials/scripts</uri>
+            <uri>model://tag36_11_00084/materials/textures</uri>
+            <name>tag36_11_00084/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00084/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00085">
       <pose>0.45 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00086</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00085/materials/scripts</uri>
+            <uri>model://tag36_11_00085/materials/textures</uri>
+            <name>tag36_11_00085/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00085/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00086">
       <pose>0.7 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00087</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00086/materials/scripts</uri>
+            <uri>model://tag36_11_00086/materials/textures</uri>
+            <name>tag36_11_00086/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00086/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00087">
       <pose>0.95 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00088</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00087/materials/scripts</uri>
+            <uri>model://tag36_11_00087/materials/textures</uri>
+            <name>tag36_11_00087/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00087/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00088">
       <pose>1.2 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00089</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00088/materials/scripts</uri>
+            <uri>model://tag36_11_00088/materials/textures</uri>
+            <name>tag36_11_00088/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00088/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00089">
       <pose>1.45 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
-    </include>
-    <include>
-      <uri>model://tag36_11_00090</uri>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00089/materials/scripts</uri>
+            <uri>model://tag36_11_00089/materials/textures</uri>
+            <name>tag36_11_00089/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00089/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+  <model name="tag36_11_00090">
       <pose>1.7 3.8999999999999995 -1.3 0.0 -0.0 0.0</pose>
-    </include>
+    <static>true</static>
+    <link name="base_link">
+      <visual name="visual">
+        <material>
+          <script>
+            <uri>model://tag36_11_00090/materials/scripts</uri>
+            <uri>model://tag36_11_00090/materials/textures</uri>
+            <name>tag36_11_00090/Image</name>
+          </script>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://tag36_11_00090/meshes/cube.dae</uri>
+            <scale>0.05 0.05 0.005</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
   </model>
 </sdf>

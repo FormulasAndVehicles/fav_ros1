@@ -28,7 +28,7 @@
                 <quadratic_coeff>${thrust_quadratic_coeff}</quadratic_coeff>
                 <torque_coeff>${torque_constant}</torque_coeff>
                 <rpm_scaler>${rpm_scaler}</rpm_scaler>
-                <max_rpm>${max_rpm}</max_rpm>
+                <maximum_rpm>${maximum_rpm}</maximum_rpm>
                 <thruster_number>${number}</thruster_number>
                 <turning_direction>${turning_direction}</turning_direction>
                 <propeller_direction>${propeller_direction}</propeller_direction>
