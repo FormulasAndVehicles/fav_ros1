@@ -1,8 +1,16 @@
 <launch>
     <arg name="vehicle_name" default="bluerov" />
+    <!-- position -->
+    <arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+    <arg name="z" default="-0.5" />
+    <!-- roll, pitch, yaw -->
+    <arg name="R" default="0.0" />
+    <arg name="P" default="0.0" />
+    <arg name="Y" default="0.0" />
     <group ns="$(arg vehicle_name)">
         <param name="robot_description" command="$(find xacro)/xacro $(find fav_sim)/models/bluerov/urdf/bluerov.xacro" />
-        <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model $(arg vehicle_name)" />
+        <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model $(arg vehicle_name) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)" />
         <node name="esc_commander" pkg="fav_sim" type="esc_commander" output="screen" />
         <node name="mixer" pkg="fav_sim" type="simple_mixer" output="screen">
             <rosparam command="load" file="$(find fav_sim)/config/mixer_default.yaml" />
