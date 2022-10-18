@@ -45,11 +45,9 @@ class Mixer {
 
  private:
   void OnInput(const std_msgs::Float64::ConstPtr &_msg, int i) {
-    ROS_INFO("Hello from callback!");
     if (i < mixer::kChannels) {
       std::lock_guard<std::mutex> lock(mutex_);
       setpoint_[i] = _msg->data;
-      ROS_INFO("Setting setpoint for %d: %f", i, setpoint_[i]);
     }
   }
   bool GetParams() {
