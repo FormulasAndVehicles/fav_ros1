@@ -1,4 +1,5 @@
 #include <fav_msgs/ThrusterSetpoint.h>
+#include <gazebo_msgs/DeleteModel.h>
 #include <ignition/msgs/double.pb.h>
 #include <ros/ros.h>
 
@@ -30,11 +31,14 @@ class EscCommanderNode {
         boost::bind(&EscCommanderNode::OnThrusterSetpoint, this, _1));
   }
 
+  void Run() { ros::spin(); }
+
  private:
   void OnWatchdogTimeout(const ros::TimerEvent &) {
     ROS_WARN_COND(!timed_out_,
                   "'%s' timed out. Sending zero thrust until new "
-                  "messages arrive.", setpoint_topic_.c_str());
+                  "messages arrive.",
+                  setpoint_topic_.c_str());
     timed_out_ = true;
     gazebo::msgs::Any msg;
     msg.set_type(gazebo::msgs::Any_ValueType_DOUBLE);
@@ -57,6 +61,8 @@ class EscCommanderNode {
       thrust_pubs_[i]->Publish(msg);
     }
   }
+
+  static EscCommanderNode instance_;
   gazebo::transport::NodePtr gz_node_;
   std::vector<gazebo::transport::PublisherPtr> thrust_pubs_;
   ros::NodeHandle *ros_node_;
@@ -66,11 +72,31 @@ class EscCommanderNode {
   bool timed_out_{false};
 };
 
+void OnShutdown(int _signal) {
+  ros::NodeHandle n;
+  if (_signal == SIGINT) {
+    ros::ServiceClient client =
+        n.serviceClient<gazebo_msgs::DeleteModel>(
+            "/gazebo/delete_model");
+    gazebo_msgs::DeleteModel service;
+    std::string name = n.getNamespace();
+    name.erase(0, 1);
+    service.request.model_name = name;
+    if (!client.call(service)) {
+      ROS_ERROR("Failed to delete model: %s", name.c_str());
+    } else {
+      ROS_INFO("Model deleted: %s", name.c_str());
+    }
+  }
+  ros::shutdown();
+}
+
 int main(int argc, char **argv) {
-  ros::init(argc, argv, "esc_commander");
+  ros::init(argc, argv, "esc_commander", ros::init_options::NoSigintHandler);
   gazebo::client::setup(argc, argv);
   ros::NodeHandle ros_node;
+  signal(SIGINT, OnShutdown);
   EscCommanderNode node(&ros_node);
-  ros::spin();
+  node.Run();
   gazebo::client::shutdown();
 }
