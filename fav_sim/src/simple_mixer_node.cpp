@@ -41,7 +41,9 @@ class Mixer {
         std::array<double, mixer::kChannels> tmp = mixer_.Mix(setpoint_);
         std::copy(tmp.begin(), tmp.end(), msg.data.begin());
       }
-      setpoint_pub_.publish(msg);
+      if (!timed_out_) {
+        setpoint_pub_.publish(msg);
+      }
       ros::spinOnce();
     }
   }
