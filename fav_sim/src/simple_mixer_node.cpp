@@ -15,6 +15,9 @@ class Mixer {
     setpoint_pub_ = node_handle_->advertise<fav_msgs::ThrusterSetpoint>(
         "thruster_setpoint", 1);
 
+    watchdog_ = node_handle_->createTimer(
+        ros::Duration(0.3), boost::bind(&Mixer::OnWatchdogTimeout, this, _1));
+
     roll_sub_ = node_handle_->subscribe<std_msgs::Float64>(
         "roll", 1, boost::bind(&Mixer::OnInput, this, _1, 0));
     pitch_sub_ = node_handle_->subscribe<std_msgs::Float64>(
@@ -43,9 +46,23 @@ class Mixer {
     }
   }
 
+  void OnWatchdogTimeout(const ros::TimerEvent &) {
+    ROS_WARN_COND(!timed_out_,
+                  "Timed out. Sending zero thrust until new "
+                  "messages arrive.");
+    timed_out_ = true;
+    fav_msgs::ThrusterSetpoint msg;
+    msg.header.stamp = ros::Time::now();
+    setpoint_pub_.publish(msg);
+  }
+
  private:
   void OnInput(const std_msgs::Float64::ConstPtr &_msg, int i) {
     if (i < mixer::kChannels) {
+      timed_out_ = false;
+      watchdog_.stop();
+      watchdog_ = node_handle_->createTimer(
+          ros::Duration(0.3), boost::bind(&Mixer::OnWatchdogTimeout, this, _1));
       std::lock_guard<std::mutex> lock(mutex_);
       setpoint_[i] = _msg->data;
     }
@@ -92,6 +109,8 @@ class Mixer {
   ros::Subscriber thrust_sub_;
   ros::Subscriber vertical_thrust_sub_;
   ros::Subscriber lateral_thrust_sub_;
+  ros::Timer watchdog_;
+  bool timed_out_{true};
 
   std::array<double, mixer::kChannels> setpoint_;
 
