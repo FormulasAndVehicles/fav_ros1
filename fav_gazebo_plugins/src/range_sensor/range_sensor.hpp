@@ -11,7 +11,7 @@
 
 namespace gazebo {
 static constexpr double kDefaultPubRate = 7.0;
-static constexpr char kDefaultRangesTopic[] = "tag_detections_sim";
+static constexpr char kDefaultRangesTopic[] = "tag_detections";
 static constexpr double kDefaultRangesNoise = 0.1;
 static constexpr double kDefaultFov = 90;
 static constexpr double kDefaultViewingAngle = 140;
@@ -35,6 +35,10 @@ class RangeSensorPlugin : public ModelPlugin {
   double GetDistanceDropProp(double dist);
 
  private:
+  std::string GetTagName(int _tag_id);
+  bool GetTagPosition(int _tag_id);
+  bool InitTagPositions();
+  
   std::string namespace_;
   physics::ModelPtr model_;
   physics::WorldPtr world_;
@@ -59,10 +63,7 @@ class RangeSensorPlugin : public ModelPlugin {
   common::Time last_pub_time_;
   common::Time last_time_;
 
-  ignition::math::Vector3d pos_tag_1_;
-  ignition::math::Vector3d pos_tag_2_;
-  ignition::math::Vector3d pos_tag_3_;
-  ignition::math::Vector3d pos_tag_4_;
+  std::map<int, ignition::math::Vector3d> tag_positions_;
 
   ignition::math::Vector3d tag_axis_;
 

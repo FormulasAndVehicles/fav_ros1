@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="hippocampus">
     <xacro:include filename="$(find fav_sim)/models/bluerov/urdf/bluerov_params.xacro" />
     <xacro:include filename="$(find fav_sim)/models/thruster/urdf/thruster_macro.xacro" />
+    <xacro:include filename="$(find fav_sim)/models/range_sensor/urdf/range_sensor_macro.xacro" />
 
     <xacro:property name="thruster_xy" value="${thruster_r / 2**0.5}" />
     <link name="base_link">
@@ -104,7 +105,7 @@
     <xacro:thruster parent="base_link" suffix="rear_starboard_vertical" xyz="-0.12 -0.22 0.06" rpy="0 ${radians(-90)} 0" turning_direction="ccw" propeller_direction="cw" color="grey" number="6" />
     <xacro:thruster parent="base_link" suffix="rear_port_vertical" xyz="-0.12 0.22 0.06" rpy="0 ${radians(-90)} 0" turning_direction="cw" propeller_direction="cw" color="grey" number="7" />
 
-    <!-- <xacro:camera_macro parent="base_link" prefix="vertical_camera" xyz="${camera_position}" rpy="0 ${radians(90)} 0" /> -->
+    <xacro:range_sensor parent="base_link" prefix="range_sensor" xyz="${range_sensor_position}" rpy="${range_sensor_orientation}" />
 
 
 </robot>

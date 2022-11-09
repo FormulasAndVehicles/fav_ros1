@@ -2,6 +2,8 @@
 
 #include <math.h>
 
+#include <string>
+
 namespace gazebo {
 GZ_REGISTER_MODEL_PLUGIN(RangeSensorPlugin)
 
@@ -93,52 +95,51 @@ void RangeSensorPlugin::Load(physics::ModelPtr model, sdf::ElementPtr sdf) {
       boost::bind(&RangeSensorPlugin::OnUpdate, this, _1));
 
   ranges_pub_ = node_handle_->advertise<fav_msgs::RangeMeasurementArray>(
-      namespace_ + "/" + ranges_topic_, 1);
+      ranges_topic_, 1);
 
   initialized_ = false;
   tag_axis_ = ignition::math::Vector3d(0.0, 1.0, 0.0);
+}
+
+std::string RangeSensorPlugin::GetTagName(int _tag_id) {
+  return "apriltag_tank_ranges::tag_" + std::to_string(_tag_id + 1);
+}
+
+bool RangeSensorPlugin::GetTagPosition(int _tag_id) {
+  std::string tag_name = GetTagName(_tag_id);
+  auto model = world_->ModelByName(tag_name);
+  if (!model) {
+    return false;
+  }
+  tag_positions_[_tag_id] = model->WorldPose().Pos();
+  return true;
+}
+
+bool RangeSensorPlugin::InitTagPositions() {
+  if (initialized_) {
+    return true;
+  }
+  for (int i = 0; i < 4; ++i) {
+    if (!GetTagPosition(i)) {
+      initialized_ = false;
+      return false;
+    }
+  }
+  initialized_ = true;
+  gzmsg << "Range sensor initialized!\n";
+  return true;
 }
 
 void RangeSensorPlugin::OnUpdate(const common::UpdateInfo &) {
   common::Time current_time = world_->SimTime();
   double dt = (current_time - last_pub_time_).Double();
 
-  if (!initialized_) {
-    auto model = world_->ModelByName("apriltag_tank");
-    if (model && model->GetChildLink("tag_1::base_link")) {
-      pos_tag_1_ = world_->ModelByName("apriltag_tank")
-                       ->GetChildLink("tag_1::base_link")
-                       ->RelativePose()
-                       .Pos();
-      gzmsg << "[ranges plugin] Tag 1 Position found.\n";
-    }
-    if (model && model->GetChildLink("tag_2::base_link")) {
-      pos_tag_2_ = world_->ModelByName("apriltag_tank")
-                       ->GetChildLink("tag_2::base_link")
-                       ->RelativePose()
-                       .Pos();
-      gzmsg << "[ranges plugin] Tag 2 Position found.\n";
-    }
-    if (model && model->GetChildLink("tag_3::base_link")) {
-      pos_tag_3_ = world_->ModelByName("apriltag_tank")
-                       ->GetChildLink("tag_3::base_link")
-                       ->RelativePose()
-                       .Pos();
-      gzmsg << "[ranges plugin] Tag 3 Position found.\n";
-    }
-    if (model && model->GetChildLink("tag_4::base_link")) {
-      pos_tag_4_ = world_->ModelByName("apriltag_tank")
-                       ->GetChildLink("tag_4::base_link")
-                       ->RelativePose()
-                       .Pos();
-      gzmsg << "[ranges plugin] Tag 4 Position found.\n";
-      initialized_ = true;
-    }
+  if (!InitTagPositions()) {
+    return;
   }
 
-  if ((dt > 1.0 / pub_rate_) && (initialized_)) {
+  if (dt > (1.0 / pub_rate_)) {
     fav_msgs::RangeMeasurementArray msg_array;
-    msg_array.measurements.clear();
     msg_array.header.stamp = ros::Time::now();
     msg_array.header.frame_id = "map";
 
@@ -152,32 +153,11 @@ void RangeSensorPlugin::OnUpdate(const common::UpdateInfo &) {
                                                .Rot()
                                                .RotateVector(x_unit_vector);
 
-    // tag 1
-    ignition::math::Vector3d sensor_to_tag_1 = pos_tag_1_ - pos_sensor;
-    if (IsDetected(sensor_to_tag_1, body_x_axis)) {
-      fav_msgs::RangeMeasurement msg = GetRangeMsg(1, sensor_to_tag_1);
-      msg_array.measurements.push_back(msg);
-    }
-
-    // tag 2
-    ignition::math::Vector3d sensor_to_tag_2 = pos_tag_2_ - pos_sensor;
-    if (IsDetected(sensor_to_tag_2, body_x_axis)) {
-      fav_msgs::RangeMeasurement msg = GetRangeMsg(2, sensor_to_tag_2);
-      msg_array.measurements.push_back(msg);
-    }
-
-    // tag 3
-    ignition::math::Vector3d sensor_to_tag_3 = pos_tag_3_ - pos_sensor;
-    if (IsDetected(sensor_to_tag_3, body_x_axis)) {
-      fav_msgs::RangeMeasurement msg = GetRangeMsg(3, sensor_to_tag_3);
-      msg_array.measurements.push_back(msg);
-    }
-
-    // tag 4
-    ignition::math::Vector3d sensor_to_tag_4 = pos_tag_4_ - pos_sensor;
-    if (IsDetected(sensor_to_tag_4, body_x_axis)) {
-      fav_msgs::RangeMeasurement msg = GetRangeMsg(4, sensor_to_tag_4);
-      msg_array.measurements.push_back(msg);
+    for (auto const &tag : tag_positions_) {
+      ignition::math::Vector3d dist_vec{tag.second - pos_sensor};
+      if (IsDetected(dist_vec, body_x_axis)) {
+        msg_array.measurements.push_back(GetRangeMsg(tag.first, dist_vec));
+      }
     }
 
     ranges_pub_.publish(msg_array);

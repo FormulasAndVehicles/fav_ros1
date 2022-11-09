@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="range_sensor" params="prefix parent xyz rpy">
+        <xacro:property name="link" value="${prefix}_link" />
+        <xacro:property name="joint" value="${prefix}_joint" />
+        <link name="${link}">
+            <inertial>
+                <mass value="1e-5" />
+                <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0.0" izz="1e-6" />
+            </inertial>
+        </link>
+
+        <joint name="${joint}" type="fixed">
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <parent link="${parent}" />
+            <child link="${link}" />
+        </joint>
+        <gazebo reference="${joint}">
+            <preserveFixedJoint>true</preserveFixedJoint>
+        </gazebo>
+
+        <gazebo>
+            <plugin name="${prefix}" filename="librange_sensor.so">
+                <pubRate>7.0</pubRate>
+                <rangeNoiseStd>0.01</rangeNoiseStd>
+                <fovCamera>100</fovCamera>
+                <viewingAngle>140</viewingAngle>
+                <dropProb>0.02</dropProb>
+                <maxDetectionDist>5.0</maxDetectionDist>
+                <distDropProbExponent>2.0</distDropProbExponent>
+            </plugin>
+        </gazebo>
+    </xacro:macro>
+</robot>

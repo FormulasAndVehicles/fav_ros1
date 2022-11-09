@@ -18,5 +18,8 @@
     <xacro:property name="imu_orientation" value="${radians(0)} ${radians(0)} ${radians(0)}"/>
     <xacro:property name="imu_noise" value="0.0003"/>
 
+    <xacro:property name="range_sensor_position" value="0.2 0 0.1" />
+    <xacro:property name="range_sensor_orientation" value="${radians(0)} ${radians(0)} ${radians(0)}" />
+
 
 </robot>
