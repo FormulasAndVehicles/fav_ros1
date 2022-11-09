@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="noise_stddev" value="0.01" />
+    <!-- just a flat probability that an arbitrary measurement gets lost -->
+    <xacro:property name="drop_probability" value="0.02" />
+    <xacro:property name="max_detection_distance" value="5.0" />
+    <!-- scaling coefficient of a measurement beeing dropped due to the distance -->
+    <xacro:property name="drop_probability_exponent" value="2.0" />
+
+</robot>

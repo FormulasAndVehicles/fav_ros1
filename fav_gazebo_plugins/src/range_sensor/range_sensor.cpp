@@ -4,6 +4,8 @@
 
 #include <string>
 
+#include "common.hpp"
+
 namespace gazebo {
 GZ_REGISTER_MODEL_PLUGIN(RangeSensorPlugin)
 
@@ -11,71 +13,18 @@ RangeSensorPlugin::RangeSensorPlugin() : ModelPlugin() {}
 
 RangeSensorPlugin::~RangeSensorPlugin() { update_connection_->~Connection(); }
 
-void RangeSensorPlugin::getSdfParams(sdf::ElementPtr sdf) {
-  namespace_.clear();
-  if (sdf->HasElement("robotNamespace")) {
-    namespace_ = sdf->GetElement("robotNamespace")->Get<std::string>();
-  }
-  if (sdf->HasElement("pubRate")) {
-    pub_rate_ = sdf->GetElement("pubRate")->Get<double>();
-  } else {
-    pub_rate_ = kDefaultPubRate;
-    gzwarn << "[ranges_plugin] Using default publication rate of " << pub_rate_
-           << "Hz\n";
-  }
-  if (sdf->HasElement("rangesTopic")) {
-    ranges_topic_ = sdf->GetElement("rangesTopic")->Get<std::string>();
-  } else {
-    ranges_topic_ = kDefaultRangesTopic;
-  }
-  if (sdf->HasElement("rangeNoiseStd")) {
-    range_noise_std_ = sdf->GetElement("rangeNoiseStd")->Get<double>();
-  } else {
-    range_noise_std_ = kDefaultRangesNoise;
-    gzwarn << "[ranges_plugin] Using default noise " << kDefaultRangesNoise
-           << "\n";
-  }
-  if (sdf->HasElement("fovCamera")) {
-    // we'll check visibility using half the fov angle
-    max_fov_angle_ =
-        sdf->GetElement("fovCamera")->Get<double>() / 2.0 * (M_PI / 180.0);
-  } else {
-    max_fov_angle_ = (kDefaultFov / 2.0) * (M_PI / 180.0);
-    gzwarn << "[ranges_plugin] Using default field of view angle "
-           << kDefaultFov << "\n";
-  }
-  if (sdf->HasElement("viewingAngle")) {
-    // we'll check visibility using half the viewing angle
-    max_viewing_angle_ =
-        sdf->GetElement("viewingAngle")->Get<double>() / 2.0 * (M_PI / 180.0);
-  } else {
-    max_viewing_angle_ = (kDefaultViewingAngle / 2.0) * (M_PI / 180.0);
-    gzwarn << "[ranges_plugin] Using default viewing angle "
-           << kDefaultViewingAngle << "\n";
-  }
-  if (sdf->HasElement("dropProb")) {
-    drop_prob_ = sdf->GetElement("dropProb")->Get<double>();
-  } else {
-    drop_prob_ = kDefaultDropProb;
-    gzwarn << "[ranges_plugin] Using default probability " << kDefaultDropProb
-           << " for dropping measurements\n";
-  }
-  if (sdf->HasElement("maxDetectionDist")) {
-    max_detection_dist_ = sdf->GetElement("maxDetectionDist")->Get<double>();
-  } else {
-    max_detection_dist_ = kDefaultMaxDetectionDist;
-    gzwarn << "[ranges_plugin] Using default max detection distance "
-           << kDefaultMaxDetectionDist << "\n";
-  }
-  if (sdf->HasElement("maxDetectionDist")) {
-    dist_drop_prob_exponent_ =
-        sdf->GetElement("maxDetectionDist")->Get<double>();
-  } else {
-    dist_drop_prob_exponent_ = kDefaultDistDropProbExponent;
-    gzwarn << "[ranges_plugin] Using default Exponent "
-           << kDefaultDistDropProbExponent
-           << " for probability that too far away measurements are dropped \n";
-  }
+void RangeSensorPlugin::getSdfParams(sdf::ElementPtr _sdf) {
+  AssignSdfParam(_sdf, "robotNamespace", sdf_params_.robotNamespace);
+  AssignSdfParam(_sdf, "update_rate", sdf_params_.update_rate);
+  AssignSdfParam(_sdf, "topic", sdf_params_.topic);
+  AssignSdfParam(_sdf, "range_noise_std", sdf_params_.range_noise_std);
+  AssignSdfParam(_sdf, "max_fov_angle", sdf_params_.max_fov_angle);
+  AssignSdfParam(_sdf, "max_viewing_angle", sdf_params_.max_viewing_angle);
+  AssignSdfParam(_sdf, "drop_probability", sdf_params_.drop_probability);
+  AssignSdfParam(_sdf, "max_detection_distance",
+                 sdf_params_.max_detection_distance);
+  AssignSdfParam(_sdf, "dist_drop_probability_exp",
+                 sdf_params_.dist_prob_probability_exp);
 }
 
 void RangeSensorPlugin::Load(physics::ModelPtr model, sdf::ElementPtr sdf) {
@@ -89,13 +38,13 @@ void RangeSensorPlugin::Load(physics::ModelPtr model, sdf::ElementPtr sdf) {
     ROS_FATAL_STREAM("ROS node for gazebo not initialized");
     return;
   }
-  node_handle_ = new ros::NodeHandle(namespace_);
+  node_handle_ = new ros::NodeHandle(sdf_params_.robotNamespace);
 
   update_connection_ = event::Events::ConnectWorldUpdateBegin(
       boost::bind(&RangeSensorPlugin::OnUpdate, this, _1));
 
   ranges_pub_ = node_handle_->advertise<fav_msgs::RangeMeasurementArray>(
-      ranges_topic_, 1);
+      sdf_params_.topic, 1);
 
   initialized_ = false;
   tag_axis_ = ignition::math::Vector3d(0.0, 1.0, 0.0);
@@ -138,7 +87,7 @@ void RangeSensorPlugin::OnUpdate(const common::UpdateInfo &) {
     return;
   }
 
-  if (dt > (1.0 / pub_rate_)) {
+  if (dt > (1.0 / sdf_params_.update_rate)) {
     fav_msgs::RangeMeasurementArray msg_array;
     msg_array.header.stamp = ros::Time::now();
     msg_array.header.frame_id = "map";
@@ -175,8 +124,8 @@ bool RangeSensorPlugin::IsDetected(ignition::math::Vector3d sensor_to_tag,
   double viewing_angle = acos(tag_axis_.Dot(body_x_axis) /
                               (tag_axis_.Length() * body_x_axis.Length()));
 
-  bool is_visible =
-      (fov_angle < max_fov_angle_) && (viewing_angle < max_viewing_angle_);
+  bool is_visible = (fov_angle < sdf_params_.max_fov_angle) &&
+                    (viewing_angle < sdf_params_.max_viewing_angle);
 
   // measurement might be dropped for whatever reason
   double p = uniform_real_distribution_(random_generator_);
@@ -184,7 +133,8 @@ bool RangeSensorPlugin::IsDetected(ignition::math::Vector3d sensor_to_tag,
   double p_dist = uniform_real_distribution_(random_generator_);
   double drop_prob_dist = GetDistanceDropProp(sensor_to_tag.Length());
 
-  bool is_not_dropped = (p > drop_prob_) && (p_dist > drop_prob_dist);
+  bool is_not_dropped =
+      (p > sdf_params_.drop_probability) && (p_dist > drop_prob_dist);
 
   return is_visible && is_not_dropped;
 }
@@ -198,15 +148,15 @@ fav_msgs::RangeMeasurement RangeSensorPlugin::GetRangeMsg(
 
   double distance = sensor_to_tag.Length();
   // add noise
-  double noise =
-      standard_normal_distribution_(random_generator_) * range_noise_std_;
+  double noise = standard_normal_distribution_(random_generator_) *
+                 sdf_params_.range_noise_std;
   msg.range = distance + noise;
   return msg;
 }
 
 double RangeSensorPlugin::GetDistanceDropProp(double dist) {
-  double p = (1.0 / pow(max_detection_dist_, dist_drop_prob_exponent_)) *
-             pow(dist, dist_drop_prob_exponent_);
+  double p = pow(dist / sdf_params_.max_detection_distance,
+                 sdf_params_.dist_prob_probability_exp);
   if (p > 1.0) {
     p = 1.0;
   }

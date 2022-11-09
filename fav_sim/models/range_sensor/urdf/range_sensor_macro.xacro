@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     <xacro:macro name="range_sensor" params="prefix parent xyz rpy">
+        <xacro:include filename="$(find fav_sim)/models/range_sensor/urdf/range_sensor_params.xacro" />
         <xacro:property name="link" value="${prefix}_link" />
         <xacro:property name="joint" value="${prefix}_joint" />
         <link name="${link}">
@@ -21,13 +22,14 @@
 
         <gazebo>
             <plugin name="${prefix}" filename="librange_sensor.so">
-                <pubRate>7.0</pubRate>
-                <rangeNoiseStd>0.01</rangeNoiseStd>
-                <fovCamera>100</fovCamera>
-                <viewingAngle>140</viewingAngle>
-                <dropProb>0.02</dropProb>
-                <maxDetectionDist>5.0</maxDetectionDist>
-                <distDropProbExponent>2.0</distDropProbExponent>
+                <update_rate>7.0</update_rate>7.0
+                <topic>ranges</topic>
+                <range_noise_std>${noise_stddev}</range_noise_std>
+                <max_fov_angle>100</max_fov_angle>
+                <max_viewing_angle>140</max_viewing_angle>
+                <drop_probability>${drop_probability}</drop_probability>
+                <max_detection_distance>${max_detection_distance}</max_detection_distance>
+                <dist_drop_probability_exp>${drop_probability_exponent}</dist_drop_probability_exp>
             </plugin>
         </gazebo>
     </xacro:macro>
