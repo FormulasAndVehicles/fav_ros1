@@ -13,5 +13,10 @@
     <xacro:property name="barometer_position" value="-0.15 0 -0.05" />
     <xacro:property name="barometer_noise" value="100.0" />
 
+    <!-- relative to the BlueROV's body-frame -->
+    <xacro:property name="imu_position" value="0.15 0 0.05" />
+    <xacro:property name="imu_orientation" value="${radians(0)} ${radians(0)} ${radians(0)}"/>
+    <xacro:property name="imu_noise" value="0.0003"/>
+
 
 </robot>
