@@ -43,6 +43,10 @@ class Mixer {
       }
       if (!timed_out_) {
         setpoint_pub_.publish(msg);
+      } else {
+        fav_msgs::ThrusterSetpoint zero_msg;
+        zero_msg.header.stamp = ros::Time::now();
+        setpoint_pub_.publish(zero_msg);
       }
       ros::spinOnce();
     }
@@ -64,7 +68,7 @@ class Mixer {
       timed_out_ = false;
       watchdog_.stop();
       watchdog_ = node_handle_->createTimer(
-          ros::Duration(0.3), boost::bind(&Mixer::OnWatchdogTimeout, this, _1));
+          ros::Duration(0.5), boost::bind(&Mixer::OnWatchdogTimeout, this, _1));
       std::lock_guard<std::mutex> lock(mutex_);
       setpoint_[i] = _msg->data;
     }
