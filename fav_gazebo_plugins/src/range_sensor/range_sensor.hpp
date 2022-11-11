@@ -11,7 +11,7 @@
 
 namespace gazebo {
 static constexpr double kDefaultPubRate = 7.0;
-static constexpr char kDefaultRangesTopic[] = "tag_detections_sim";
+static constexpr char kDefaultRangesTopic[] = "tag_detections";
 static constexpr double kDefaultRangesNoise = 0.1;
 static constexpr double kDefaultFov = 90;
 static constexpr double kDefaultViewingAngle = 140;
@@ -35,22 +35,27 @@ class RangeSensorPlugin : public ModelPlugin {
   double GetDistanceDropProp(double dist);
 
  private:
-  std::string namespace_;
+  struct {
+    std::string robotNamespace;
+    std::string topic{"tag_detections"};
+    double range_noise_std{0.01};
+    double max_fov_angle{90.0};
+    double max_viewing_angle{140.0};
+    double drop_probability{0.05};
+    double max_detection_distance{5.0};
+    double dist_prob_probability_exp{2.0};
+    double update_rate{7.0};
+  } sdf_params_;
+  std::string GetTagName(int _tag_id);
+  bool GetTagPosition(int _tag_id);
+  bool InitTagPositions();
+
   physics::ModelPtr model_;
   physics::WorldPtr world_;
   event::ConnectionPtr update_connection_;
-  std::string ranges_topic_;
-  double range_noise_std_;
-  double max_fov_angle_;
-  double max_viewing_angle_;
-  double drop_prob_;
-  double max_detection_dist_;
-  double dist_drop_prob_exponent_;
 
   ros::NodeHandle *node_handle_;
   ros::Publisher ranges_pub_;
-
-  double pub_rate_;
 
   std::default_random_engine random_generator_;
   std::normal_distribution<double> standard_normal_distribution_;
@@ -59,10 +64,7 @@ class RangeSensorPlugin : public ModelPlugin {
   common::Time last_pub_time_;
   common::Time last_time_;
 
-  ignition::math::Vector3d pos_tag_1_;
-  ignition::math::Vector3d pos_tag_2_;
-  ignition::math::Vector3d pos_tag_3_;
-  ignition::math::Vector3d pos_tag_4_;
+  std::map<int, ignition::math::Vector3d> tag_positions_;
 
   ignition::math::Vector3d tag_axis_;
 
