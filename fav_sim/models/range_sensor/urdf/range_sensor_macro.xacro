@@ -25,8 +25,8 @@
                 <update_rate>7.0</update_rate>7.0
                 <topic>ranges</topic>
                 <range_noise_std>${noise_stddev}</range_noise_std>
-                <max_fov_angle>100</max_fov_angle>
-                <max_viewing_angle>140</max_viewing_angle>
+                <max_fov_angle>${max_fov_angle}</max_fov_angle>
+                <max_viewing_angle>${max_viewing_angle}</max_viewing_angle>
                 <drop_probability>${drop_probability}</drop_probability>
                 <max_detection_distance>${max_detection_distance}</max_detection_distance>
                 <dist_drop_probability_exp>${drop_probability_exponent}</dist_drop_probability_exp>
