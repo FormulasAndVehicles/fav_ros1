@@ -7,4 +7,13 @@
     <!-- scaling coefficient of a measurement beeing dropped due to the distance -->
     <xacro:property name="drop_probability_exponent" value="2.0" />
 
+    <!-- angle limit between x-axis of the robot and the normal axis of the
+        detected range target. For larger angles, no range measurement will
+        be generated -->
+    <xacro:property name="max_viewing_angle" value="140.0" />
+
+    <!-- field of view angle of the range sensor. Tags outside this cone won't
+        be detected. -->
+    <xacro:property name="max_fov_angle" value="90.0" />
+
 </robot>
