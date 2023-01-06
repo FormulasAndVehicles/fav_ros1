@@ -17,5 +17,10 @@
         <node name="mixer" pkg="fav_sim" type="simple_mixer" output="screen">
             <rosparam command="load" file="$(find fav_sim)/config/mixer_default.yaml" />
         </node>
+        <node name="virtual_vision" pkg="fav_sim" type="virtual_vision_pose.py" output="screen" >
+            <param name="stddev_x" value="0.05" />
+            <param name="stddev_y" value="0.05" />
+            <param name="stddev_z" value="0.01" />
+        </node>
     </group>
 </launch>
