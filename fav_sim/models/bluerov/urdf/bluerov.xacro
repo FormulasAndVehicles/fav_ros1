@@ -3,6 +3,7 @@
     <xacro:include filename="$(find fav_sim)/models/bluerov/urdf/bluerov_params.xacro" />
     <xacro:include filename="$(find fav_sim)/models/thruster/urdf/thruster_macro.xacro" />
     <xacro:include filename="$(find fav_sim)/models/range_sensor/urdf/range_sensor_macro.xacro" />
+    <xacro:include filename="$(find fav_sim)/models/camera/urdf/camera_macro.xacro" />
 
     <xacro:property name="thruster_xy" value="${thruster_r / 2**0.5}" />
     <link name="base_link">
@@ -94,6 +95,12 @@
         <preserveFixedJoint>true</preserveFixedJoint>
     </gazebo>
 
+    <xacro:if value="$(arg use_vertical_camera)">
+        <xacro:camera parent="base_link" prefix="vertical_camera" xyz="${vertical_camera_position}" rpy="${vertical_camera_orientation}" />
+    </xacro:if>
+    <xacro:if value="$(arg use_front_camera)">
+        <xacro:camera parent="base_link" prefix="front_camera" xyz="${front_camera_position}" rpy="${front_camera_orientation}" />
+    </xacro:if>
 
     <xacro:thruster parent="base_link" suffix="front_starboard_horizontal" xyz="0.14 -0.10 0" rpy="0 0 ${radians(45)}" turning_direction="cw" propeller_direction="cw" color="red" number="0" />
     <xacro:thruster parent="base_link" suffix="front_port_horizontal" xyz="0.14 0.10 0" rpy="0 0 ${radians(-45)}" turning_direction="cw" propeller_direction="cw" color="green" number="1" />
